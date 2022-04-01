@@ -4,7 +4,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 
 
-const endpoint = 'http://127.0.0.1:8000/api'
+const endpoint = 'http://127.0.0.1:8000/Bar'
 const ShowProducts = () => {
     const  [ products, setProducts ] = useState([]);
         useEffect ( () => {
@@ -14,7 +14,7 @@ const ShowProducts = () => {
 
     const getAllProducts = async () => {
        const response = await axios.get(`${endpoint}/products`)
-       setProducts(response)
+       setProducts(response.data)
     }
 
     const deleteProduct = async (id) => {
